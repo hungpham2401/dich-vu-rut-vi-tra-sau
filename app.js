@@ -6,120 +6,24 @@ const ADMIN_CONFIG = {
   phoneFormatted: "0985.332.378",
   zaloUrl: "https://zalo.me/0985332378",
   telegramUsername: "loveblue67",
-  telegramUrl: "https://t.me/loveblue67"
+  telegramUrl: "https://t.me/loveblue67",
+  tiktokUsername: "andrew80117",
+  tiktokUrl: "https://www.tiktok.com/@andrew80117",
+  address: "11 Phạm Văn Bạch, Cầu Giấy, Hà Nội"
 };
 
-// Store Locator Data (All Updated to Nguyen Tung's Hotline 0985.332.378)
+// Single Official Office Location: 11 Phạm Văn Bạch, Cầu Giấy, Hà Nội
 const storeLocatorData = [
   {
-    id: 84,
-    name: "Trụ sở Rút Ví Trả Sau – Hoàng Mai (Nguyen Tung)",
-    address: "39 Giáp Nhị, Phường Thịnh Liệt, Quận Hoàng Mai, TP. Hà Nội",
+    id: 1,
+    name: "Trụ sở Rút Ví Trả Sau – Nguyen Tung (Cầu Giấy)",
+    address: "11 Phạm Văn Bạch, Phường Yên Hòa, Quận Cầu Giấy, TP. Hà Nội",
     hotline: "0985332378",
-    hours: "07:00 - 24:00 (Online 24/7)",
-    province: "Hà Nội",
-    district: "Hoàng Mai",
-    coordinates: { lat: 20.977003166, lng: 105.84324449 },
-    googleMapsUrl: "https://maps.app.goo.gl/qBcw6eRuGjwPErDj6"
-  },
-  {
-    id: 86,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Giáp Bát",
-    address: "119 Ngõ 24 Kim Đồng, Giáp Bát, Quận Hoàng Mai, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Hoàng Mai",
-    coordinates: { lat: 20.97991943, lng: 105.84274292 },
-    googleMapsUrl: "https://maps.app.goo.gl/qBcw6eRuGjwPErDj6"
-  },
-  {
-    id: 87,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Cầu Giấy",
-    address: "247 Cầu Giấy, Dịch Vọng, Quận Cầu Giấy, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
+    hours: "07:00 - 24:00 (Hỗ trợ Online 24/7 Toàn Quốc)",
     province: "Hà Nội",
     district: "Cầu Giấy",
-    coordinates: { lat: 21.034181461, lng: 105.796374616 },
-    googleMapsUrl: "https://maps.app.goo.gl/JLsTPUCutv7QLBMb8"
-  },
-  {
-    id: 90,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Hoàn Kiếm",
-    address: "14B Chương Dương Độ, Phường Chương Dương, Quận Hoàn Kiếm, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Hoàn Kiếm",
-    coordinates: { lat: 21.029672586, lng: 105.859132069 },
-    googleMapsUrl: "https://maps.app.goo.gl/eGhtSMKcAwFrkdv47"
-  },
-  {
-    id: 91,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Hai Bà Trưng",
-    address: "3B Thanh Nhàn, Phường Quỳnh Mai, Quận Hai Bà Trưng, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Hai Bà Trưng",
-    coordinates: { lat: 21.0027487, lng: 105.8609423 },
-    googleMapsUrl: "https://maps.app.goo.gl/LNNMZBPBMgfggUH4A"
-  },
-  {
-    id: 92,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Đống Đa",
-    address: "165 Chùa Bộc, Phường Trung Liệt, Quận Đống Đa, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Đống Đa",
-    coordinates: { lat: 21.00795958, lng: 105.827211025 },
-    googleMapsUrl: "https://maps.app.goo.gl/Z8JxFbkSwfDL4EHa9"
-  },
-  {
-    id: 93,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Tây Hồ",
-    address: "282 Thụy Khuê, Phường Thụy Khuê, Quận Tây Hồ, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Tây Hồ",
-    coordinates: { lat: 21.044549101, lng: 105.814803426 },
-    googleMapsUrl: "https://maps.app.goo.gl/3YvzSe5w7TLpzRCF9"
-  },
-  {
-    id: 94,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Thanh Xuân",
-    address: "192 Lê Trọng Tấn, Phường Khương Mai, Quận Thanh Xuân, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Thanh Xuân",
-    coordinates: { lat: 20.994209553, lng: 105.831195689 },
-    googleMapsUrl: "https://maps.app.goo.gl/17oppeWV4m3wzRBE8"
-  },
-  {
-    id: 95,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Hà Đông",
-    address: "20 Văn Quán, Phường Văn Quán, Quận Hà Đông, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Hà Đông",
-    coordinates: { lat: 20.979752418, lng: 105.795073093 },
-    googleMapsUrl: "https://maps.app.goo.gl/u8qVA5FzqRSLD8MF9"
-  },
-  {
-    id: 96,
-    name: "Điểm giao dịch Rút Ví Trả Sau – Long Biên",
-    address: "332 Ngô Gia Tự, Phường Đức Giang, Quận Long Biên, TP. Hà Nội",
-    hotline: "0985332378",
-    hours: "07:00 - 24:00",
-    province: "Hà Nội",
-    district: "Long Biên",
-    coordinates: { lat: 21.065131417, lng: 105.897813712 },
-    googleMapsUrl: "https://maps.app.goo.gl/KbCiaWPi1bFUk35HA"
+    coordinates: { lat: 21.0268, lng: 105.7885 },
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=11+Ph%E1%BA%A1m+V%C4%83n+B%E1%BA%A1ch,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i"
   }
 ];
 
@@ -149,9 +53,9 @@ const seedComments = [
   "Anh Tùng hỗ trợ nhiệt tình thật sự, mình rút MoMo 8 triệu tiền về ngay.",
   "Dịch vụ ổn áp, rất đáng tin tưởng, phí rẻ hơn mấy chỗ trước mình hỏi.",
   "Mình thử 2 lần qua Telegram @loveblue67 đều nhận được tiền siêu nhanh.",
-  "Rất hài lòng, sẽ giới thiệu bạn bè qua chỗ anh Nguyen Tung.",
+  "Biết anh Tùng qua kênh TikTok @andrew80117, qua rút thử uy tín 100% luôn.",
   "Rút cái có luôn tiền vào tài khoản ngân hàng, chất lượng thật sự!",
-  "Lúc đầu cũng hơi nghi ngờ nhưng làm với anh Tùng xong thì tin tuyệt đối.",
+  "Lúc đầu cũng hơi nghi ngờ nhưng qua trực tiếp 11 Phạm Văn Bạch gặp anh Tùng xong thì tin tuyệt đối.",
   "Chưa từng thấy dịch vụ nào xử lý nhanh như vậy, đúng 3 phút tinh tinh.",
   "Support nhiệt tình 10 điểm, hướng dẫn từng bước rất dễ hiểu.",
   "Mình rút SPayLater lúc 11h30 đêm anh Tùng vẫn online chuyển khoản ngay.",
@@ -367,110 +271,34 @@ function stepLightbox(dir) {
   openLightbox(currentLightboxIdx);
 }
 
-// Store Locator & Leaflet Map (Bright Mode)
+// Store Locator & Leaflet Map (Single Official Location: 11 Phạm Văn Bạch, Cầu Giấy)
 let leafletMap = null;
-let mapMarkers = [];
 
 function initStoreLocator() {
-  const provinceSelect = document.getElementById("provinceFilter");
-  const districtSelect = document.getElementById("districtFilter");
-  const listContainer = document.getElementById("locationsList");
-  const countBadge = document.getElementById("locationCount");
-  const nearestBtn = document.getElementById("findNearestBtn");
-
-  if (!listContainer) return;
-
-  const districts = [...new Set(storeLocatorData.map(s => s.district).filter(Boolean))];
-  districts.forEach(d => {
-    const opt = document.createElement("option");
-    opt.value = d;
-    opt.textContent = d;
-    districtSelect.appendChild(opt);
-  });
-
+  const loc = storeLocatorData[0];
   const mapEl = document.getElementById("map");
   if (mapEl && typeof L !== "undefined") {
-    leafletMap = L.map("map").setView([21.012, 105.835], 12);
+    leafletMap = L.map("map").setView([loc.coordinates.lat, loc.coordinates.lng], 16);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap"
     }).addTo(leafletMap);
-  }
 
-  function renderLocations(items) {
-    if (countBadge) countBadge.textContent = items.length;
-    listContainer.innerHTML = items.map(loc => `
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0068ff] hover:bg-white hover:shadow-md transition cursor-pointer" onclick="focusLocation(${loc.id})">
-        <div class="flex items-start justify-between gap-2">
-          <h4 class="font-bold text-slate-900 text-sm">${loc.name}</h4>
-          <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0068ff] border border-blue-200 shrink-0">${loc.district}</span>
-        </div>
-        <p class="text-xs text-slate-600 mt-1.5 flex items-start gap-2">
-          <i class="fa-solid fa-location-dot text-rose-500 mt-1 shrink-0"></i>
-          <span>${loc.address}</span>
-        </p>
-        <div class="flex flex-wrap items-center justify-between gap-2 mt-3 pt-2.5 border-t border-slate-200/80 text-xs">
-          <span class="text-slate-600"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i><strong class="text-slate-900">0985.332.378</strong> (Nguyen Tung)</span>
-          <div class="flex items-center gap-1.5">
-            <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-lg bg-[#0068ff] hover:bg-blue-700 text-white font-bold">
-              Zalo
-            </a>
-            <a href="${loc.googleMapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-700 font-semibold hover:bg-slate-300">
-              Bản đồ
-            </a>
-          </div>
-        </div>
+    const marker = L.marker([loc.coordinates.lat, loc.coordinates.lng]).addTo(leafletMap);
+    marker.bindPopup(`
+      <div style="min-width:220px;color:#0f172a">
+        <strong style="font-size:13px">${loc.name}</strong>
+        <p style="font-size:12px;margin:4px 0">${loc.address}</p>
+        <p style="font-size:12px;margin:4px 0"><strong>Zalo/SĐT:</strong> <a href="https://zalo.me/0985332378" target="_blank">0985.332.378 (Nguyen Tung)</a></p>
       </div>
-    `).join("");
-
-    if (leafletMap) {
-      mapMarkers.forEach(m => leafletMap.removeLayer(m));
-      mapMarkers = [];
-      items.forEach(loc => {
-        const marker = L.marker([loc.coordinates.lat, loc.coordinates.lng]).addTo(leafletMap);
-        marker.bindPopup(`
-          <div style="min-width:200px;color:#0f172a">
-            <strong style="font-size:13px">${loc.name}</strong>
-            <p style="font-size:12px;margin:4px 0">${loc.address}</p>
-            <p style="font-size:12px;margin:4px 0"><strong>Zalo/SĐT:</strong> <a href="https://zalo.me/0985332378" target="_blank">0985.332.378 (Nguyen Tung)</a></p>
-          </div>
-        `);
-        marker._locId = loc.id;
-        mapMarkers.push(marker);
-      });
-    }
+    `).openPopup();
   }
-
-  function applyFilter() {
-    const prov = provinceSelect ? provinceSelect.value : "";
-    const dist = districtSelect ? districtSelect.value : "";
-    const filtered = storeLocatorData.filter(item => {
-      const matchProv = !prov || item.province === prov || item.province === "";
-      const matchDist = !dist || item.district === dist;
-      return matchProv && matchDist;
-    });
-    renderLocations(filtered);
-  }
-
-  if (provinceSelect) provinceSelect.addEventListener("change", applyFilter);
-  if (districtSelect) districtSelect.addEventListener("change", applyFilter);
-
-  if (nearestBtn) {
-    nearestBtn.addEventListener("click", () => {
-      const first = storeLocatorData[0];
-      focusLocation(first.id);
-      showToast(`Đã định vị cơ sở gần nhất: ${first.name}`);
-    });
-  }
-
-  renderLocations(storeLocatorData);
 }
 
-window.focusLocation = function(id) {
-  const loc = storeLocatorData.find(s => s.id === id);
+window.focusMainOffice = function() {
+  const loc = storeLocatorData[0];
   if (!loc || !leafletMap) return;
-  leafletMap.setView([loc.coordinates.lat, loc.coordinates.lng], 15);
-  const marker = mapMarkers.find(m => m._locId === id);
-  if (marker) marker.openPopup();
+  leafletMap.setView([loc.coordinates.lat, loc.coordinates.lng], 17);
+  showToast("Đã định vị: 11 Phạm Văn Bạch, Cầu Giấy, Hà Nội");
 };
 
 // Realtime Seeding Comments (Bright Mode)

@@ -1,7 +1,5 @@
-// Contact Configuration for Nguyen Tung
+// Contact Configuration (Zalo, Telegram, TikTok)
 const ADMIN_CONFIG = {
-  name: "Nguyen Tung",
-  displayName: "Nguyễn Tùng (Nguyen Tung)",
   phone: "0985332378",
   phoneFormatted: "0985.332.378",
   zaloUrl: "https://zalo.me/0985332378",
@@ -16,7 +14,7 @@ const ADMIN_CONFIG = {
 const storeLocatorData = [
   {
     id: 1,
-    name: "Trụ sở Rút Ví Trả Sau – Nguyen Tung (Cầu Giấy)",
+    name: "Văn Phòng Hỗ Trợ Rút Ví Trả Sau (Cầu Giấy)",
     address: "11 Phạm Văn Bạch, Phường Yên Hòa, Quận Cầu Giấy, TP. Hà Nội",
     hotline: "0985332378",
     hours: "07:00 - 24:00 (Hỗ trợ Online 24/7 Toàn Quốc)",
@@ -49,24 +47,24 @@ const billGallery = [
 
 // Realtime Comments Data
 const seedComments = [
-  "Uy tín quá anh em, nhắn Zalo anh Tùng rút trong 3 phút có tiền luôn!",
-  "Anh Tùng hỗ trợ nhiệt tình thật sự, mình rút MoMo 8 triệu tiền về ngay.",
+  "Uy tín quá anh em, nhắn Zalo rút trong 3 phút có tiền luôn!",
+  "Shop hỗ trợ nhiệt tình thật sự, mình rút MoMo 8 triệu tiền về ngay.",
   "Dịch vụ ổn áp, rất đáng tin tưởng, phí rẻ hơn mấy chỗ trước mình hỏi.",
   "Mình thử 2 lần qua Telegram @loveblue67 đều nhận được tiền siêu nhanh.",
-  "Biết anh Tùng qua kênh TikTok @andrew80117, qua rút thử uy tín 100% luôn.",
+  "Biết bên này qua kênh TikTok @andrew80117, qua rút thử uy tín 100% luôn.",
   "Rút cái có luôn tiền vào tài khoản ngân hàng, chất lượng thật sự!",
-  "Lúc đầu cũng hơi nghi ngờ nhưng qua trực tiếp 11 Phạm Văn Bạch gặp anh Tùng xong thì tin tuyệt đối.",
+  "Lúc đầu cũng hơi nghi ngờ nhưng qua trực tiếp 11 Phạm Văn Bạch giao dịch xong thì tin tuyệt đối.",
   "Chưa từng thấy dịch vụ nào xử lý nhanh như vậy, đúng 3 phút tinh tinh.",
   "Support nhiệt tình 10 điểm, hướng dẫn từng bước rất dễ hiểu.",
-  "Mình rút SPayLater lúc 11h30 đêm anh Tùng vẫn online chuyển khoản ngay.",
-  "Lần đầu hơi lo nên gọi trực tiếp 0985332378, anh Tùng tư vấn cực kỳ đàng hoàng.",
+  "Mình rút SPayLater lúc 11h30 đêm vẫn được hỗ trợ chuyển khoản ngay.",
+  "Lần đầu hơi lo nên nhắn trực tiếp Zalo 0985.332.378, tư vấn cực kỳ đàng hoàng.",
   "Oke đó chứ, vừa rút 5 củ ZaloPay xong, phí hợp lý.",
-  "Anh Tùng hỗ trợ nhiệt tình quá, cảm ơn anh nhiều nhé!",
-  "Cảm ơn anh Nguyen Tung, tháng sau có hạn mức em lại nhắn Zalo tiếp.",
+  "Hỗ trợ nhiệt tình quá, cảm ơn shop nhiều nhé!",
+  "Rất hài lòng, tháng sau có hạn mức em lại nhắn Zalo tiếp.",
   "Tuyệt vời, đúng như cam kết, không giữ giấy tờ hay mật khẩu gì cả.",
-  "Mình recommend cho mọi người luôn, cứ nhắn Zalo 0985.332.378 hoặc Tele loveblue67 là chuẩn.",
+  "Mình recommend cho mọi người luôn, cứ nhắn Zalo 0985.332.378 hoặc Tele @loveblue67 là chuẩn.",
   "Giao dịch nhanh chóng, minh bạch, báo phí rõ ràng trước khi làm.",
-  "Tin tưởng 100% rồi, rút Kredivo với FE PayLater bên anh Tùng rất mượt."
+  "Tin tưởng 100% rồi, rút Kredivo với FE PayLater bên này rất mượt."
 ];
 
 const seedNames = [
@@ -288,7 +286,7 @@ function initStoreLocator() {
       <div style="min-width:220px;color:#0f172a">
         <strong style="font-size:13px">${loc.name}</strong>
         <p style="font-size:12px;margin:4px 0">${loc.address}</p>
-        <p style="font-size:12px;margin:4px 0"><strong>Zalo/SĐT:</strong> <a href="https://zalo.me/0985332378" target="_blank">0985.332.378 (Nguyen Tung)</a></p>
+        <p style="font-size:12px;margin:4px 0"><strong>Zalo:</strong> <a href="https://zalo.me/0985332378" target="_blank">0985.332.378</a> | <strong>Tele:</strong> <a href="https://t.me/loveblue67" target="_blank">@loveblue67</a></p>
       </div>
     `).openPopup();
   }

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGUYEN TUNG • Rút Ví Trả Sau Siêu Tốc 24/7 (MoMo, ZaloPay, SPayLater, Kredivo)</title>
+  <meta name="description" content="Hệ thống rút tiền ví trả sau thế hệ mới bởi Nguyen Tung (Zalo: 0985.332.378 | Telegram: @loveblue67). Hỗ trợ 100% hạn mức MoMo, ZaloPay, SPayLater, Kredivo, TNEX, Cake, Muadee, FE PayLater về ngân hàng trong 3 phút." />
+
+  <!-- Google Fonts: Inter with Full Vietnamese Subset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Custom Bright Neo-Fintech Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-grid-pattern antialiased selection:bg-[#0068ff] selection:text-white pb-20 md:pb-0">
+
+  <!-- FLOATING DYNAMIC ISLAND NAVBAR (BRIGHT FROSTED GLASS) -->
+  <div class="sticky top-4 z-[1100] px-4 sm:px-6">
+    <header class="max-w-6xl mx-auto rounded-full bg-white/90 backdrop-blur-xl border border-slate-200/90 px-4 sm:px-6 h-16 flex items-center justify-between shadow-lg shadow-slate-900/5">
+      <!-- Brand Identity -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#0068ff] to-emerald-500 text-white flex items-center justify-center font-extrabold text-sm shadow-md shadow-blue-600/20 group-hover:scale-105 transition">
+          NT
+        </div>
+        <div>
+          <span class="block font-extrabold text-slate-900 text-sm sm:text-base leading-none">
+            NGUYEN TUNG
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+            FINTECH PAYOUT 24/7
+          </span>
+        </div>
+      </a>
+
+      <!-- Center Pill Links -->
+      <nav class="hidden lg:flex items-center gap-1 bg-slate-100/90 border border-slate-200/80 rounded-full p-1 text-xs font-bold text-slate-600">
+        <a href="#rutvi" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">Dịch Vụ</a>
+        <a href="#uoctinh" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">Tính Phí Nhanh</a>
+        <a href="#feedback" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">Bill Thực Tế</a>
+        <a href="#support-centers" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">10 Cơ Sở</a>
+        <a href="#comments" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">Đánh Giá</a>
+        <a href="#faq" class="px-3.5 py-1.5 rounded-full hover:bg-white hover:text-[#0068ff] hover:shadow-sm transition">Hỏi Đáp</a>
+      </nav>
+
+      <!-- Right Action Pills -->
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-[#0068ff] hover:bg-blue-700 text-white font-extrabold text-xs flex items-center gap-1.5 shadow-md shadow-blue-600/20 transition">
+          <i class="fa-solid fa-comment-dots"></i> Zalo: 0985.332.378
+        </a>
+        <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-[#229ED9] hover:bg-sky-600 text-white font-extrabold text-xs flex items-center gap-1.5 shadow-md shadow-sky-500/20 transition">
+          <i class="fa-brands fa-telegram text-sm"></i> @loveblue67
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 rounded-3xl bg-white/95 backdrop-blur-xl border border-slate-200 p-4 space-y-2 shadow-2xl">
+      <a href="#rutvi" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Dịch Vụ Rút Ví Trả Sau</a>
+      <a href="#uoctinh" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Công Cụ Ước Tính Chi Phí</a>
+      <a href="#feedback" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Album Bill Giao Dịch Thực Tế</a>
+      <a href="#support-centers" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Hệ Thống 10 Điểm Giao Dịch</a>
+      <a href="#comments" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Bình Luận Khách Hàng</a>
+      <a href="#faq" class="block py-2 px-3 rounded-xl font-bold text-slate-700 hover:bg-slate-100">Câu Hỏi Thường Gặp (FAQ)</a>
+      <div class="grid grid-cols-2 gap-2 pt-2">
+        <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="py-2.5 rounded-xl bg-[#0068ff] text-white font-extrabold text-xs text-center">
+          Zalo Nguyen Tung
+        </a>
+        <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="py-2.5 rounded-xl bg-[#229ED9] text-white font-extrabold text-xs text-center">
+          Tele @loveblue67
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEO-FINTECH BENTO HERO SECTION (BRIGHT MODE) -->
+  <section class="pt-8 pb-12 md:pt-10 md:pb-14 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto space-y-5">
+      
+      <!-- Top Row of Bento Grid (Main Pitch + VIP Pass Card) -->
+      <div class="grid lg:grid-cols-12 gap-5 items-stretch">
+        
+        <!-- Bento Box 1: Main Headline & Direct Launchpad (7 cols) -->
+        <div class="lg:col-span-7 bento-card p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-extrabold text-[10px]">VERIFIED 2026</span>
+              <span>Giải Ngân Tự Động 24/7 • Nhận Tiền Sau 3 Phút</span>
+            </div>
+
+            <h1 class="text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 vn-heading-xl">
+              CHUYỂN ĐỔI HẠN MỨC <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0068ff] to-emerald-600">VÍ TRẢ SAU</span> THÀNH TIỀN MẶT TỨC THÌ.
+            </h1>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              Cần rút tiền từ <strong class="text-slate-900">MoMo, ZaloPay, Viettel Money, TNEX, SPayLater, Cake, Kredivo, Muadee, Fundiin, FE Credit</strong>? Kết nối trực tiếp với <strong class="text-[#0068ff]">Nguyen Tung</strong> để quy đổi 100% hạn mức về tài khoản ngân hàng của bạn chỉ trong vài giây với mức phí tối ưu nhất thị trường.
+            </p>
+          </div>
+
+          <!-- Primary Action Buttons -->
+          <div class="pt-7 space-y-4">
+            <div class="grid sm:grid-cols-2 gap-3.5">
+              <a
+                href="https://zalo.me/0985332378"
+                target="_blank"
+                rel="noopener"
+                class="group flex items-center justify-between p-4 rounded-2xl bg-[#0068ff] hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-white text-[#0068ff] font-extrabold text-sm flex items-center justify-center shrink-0">
+                    Zalo
+                  </div>
+                  <div class="text-left">
+                    <span class="block text-[11px] font-semibold text-blue-100">Bấm mở Zalo trực tiếp</span>
+                    <span class="block text-base font-extrabold">Nguyen Tung • 0985.332.378</span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-blue-200 group-hover:translate-x-0.5 transition"></i>
+              </a>
+
+              <a
+                href="https://t.me/loveblue67"
+                target="_blank"
+                rel="noopener"
+                class="group flex items-center justify-between p-4 rounded-2xl bg-[#229ED9] hover:bg-sky-600 text-white shadow-lg shadow-sky-500/20 transition hover:-translate-y-0.5"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-xl bg-white text-[#229ED9] text-xl flex items-center justify-center shrink-0">
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                  <div class="text-left">
+                    <span class="block text-[11px] font-semibold text-sky-100">Bấm mở Telegram trực tiếp</span>
+                    <span class="block text-base font-extrabold">Nguyen Tung • @loveblue67</span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sky-100 group-hover:translate-x-0.5 transition"></i>
+              </a>
+            </div>
+
+            <!-- Sub-trust badges -->
+            <div class="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600 pt-1">
+              <span><i class="fa-solid fa-bolt text-amber-500 mr-1.5"></i>3 phút tiền về TK</span>
+              <span><i class="fa-solid fa-lock text-emerald-600 mr-1.5"></i>Không giữ giấy tờ / mật khẩu</span>
+              <span><i class="fa-solid fa-circle-check text-[#0068ff] mr-1.5"></i>Hỗ trợ Online toàn quốc & 10 cơ sở HN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Box 2: VIP Contact Pass (5 cols) -->
+        <div class="lg:col-span-5 vip-pass-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+          <!-- Top Card Chip & Badge -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-11 h-8 rounded-lg bg-gradient-to-tr from-amber-300 via-yellow-200 to-amber-400 flex items-center justify-center shadow-inner">
+                <div class="w-7 h-5 border border-amber-700/40 rounded-sm"></div>
+              </div>
+              <i class="fa-solid fa-wifi rotate-90 text-white/70 text-sm"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-white/20 border border-white/30 text-white text-[11px] font-extrabold tracking-wide">
+              DANH THIẾP CHÍNH CHỦ
+            </span>
+          </div>
+
+          <!-- Owner Name & Title -->
+          <div class="my-6">
+            <span class="text-[11px] uppercase tracking-widest text-blue-100 font-bold">VERIFIED ADMINISTRATOR</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-0.5 flex items-center gap-2.5">
+              Nguyen Tung
+              <i class="fa-solid fa-circle-check text-emerald-300 text-xl" title="Đã xác minh chính chủ"></i>
+            </h2>
+            <p class="text-xs text-blue-100 mt-1">Chuyên gia Thanh khoản Ví Trả Sau & Thẻ Tín Dụng 24/7</p>
+          </div>
+
+          <!-- Interactive Copyable Credentials -->
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-between gap-2">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-blue-100 font-bold">SỐ ĐIỆN THOẠI / ZALO</span>
+                <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="text-lg font-extrabold text-white hover:text-amber-200 transition">
+                  0985.332.378
+                </a>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button onclick="copyText('0985332378', 'Số Zalo Nguyen Tung')" class="px-3 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold text-white transition">
+                  <i class="fa-regular fa-copy mr-1"></i>Copy
+                </button>
+                <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="px-3.5 py-2 rounded-xl bg-white text-[#0068ff] hover:bg-blue-50 text-xs font-extrabold transition shadow-sm">
+                  Chat Zalo
+                </a>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-between gap-2">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-blue-100 font-bold">TELEGRAM CHÍNH THỨC</span>
+                <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="text-lg font-extrabold text-amber-200 hover:underline transition">
+                  @loveblue67
+                </a>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button onclick="copyText('loveblue67', 'Telegram Nguyen Tung')" class="px-3 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-xs font-bold text-white transition">
+                  <i class="fa-regular fa-copy mr-1"></i>Copy
+                </button>
+                <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="px-3.5 py-2 rounded-xl bg-white text-[#0284c7] hover:bg-sky-50 text-xs font-extrabold transition shadow-sm">
+                  Mở Tele
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer -->
+          <div class="pt-5 mt-5 border-t border-white/20 flex items-center justify-between text-xs text-blue-100">
+            <span>ID: <strong class="text-white">NT-0985332378</strong></span>
+            <a href="tel:0985332378" class="text-white font-extrabold hover:underline">
+              <i class="fa-solid fa-phone-volume mr-1"></i>Gọi trực tiếp ngay
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row of Bento Grid: Marquee Ticker + Fast Metrics -->
+      <div class="grid md:grid-cols-12 gap-5">
+        <!-- Infinite Wallet Marquee (8 cols) -->
+        <div class="md:col-span-8 bento-card p-5 flex flex-col justify-center overflow-hidden">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">
+              <i class="fa-solid fa-layer-group text-[#0068ff] mr-1.5"></i>Hỗ trợ thanh khoản mọi nền tảng Ví Trả Sau & PayLater
+            </span>
+            <span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">100% Hạn mức</span>
+          </div>
+          <div class="overflow-hidden relative w-full">
+            <div class="marquee-track gap-3">
+              <!-- Set 1 -->
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🔥 MoMo Ví Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">⚡ ZaloPay Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🛍️ Shopee SPayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">💳 Viettel Money PayNow</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🚀 TNEX Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">💎 Kredivo PayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🏦 Muadee by HDBank</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🍰 Cake by VPBank</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">✨ FE PayLater / Home PayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🎯 Fundiin / VietCredit / TikTok</span>
+              <!-- Set 2 -->
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800 ml-3">🔥 MoMo Ví Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">⚡ ZaloPay Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🛍️ Shopee SPayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">💳 Viettel Money PayNow</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🚀 TNEX Trả Sau</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">💎 Kredivo PayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🏦 Muadee by HDBank</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🍰 Cake by VPBank</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">✨ FE PayLater / Home PayLater</span>
+              <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">🎯 Fundiin / VietCredit / TikTok</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Bento Box (4 cols) -->
+        <div class="md:col-span-4 bento-card-emerald p-5 flex items-center justify-around text-center">
+          <div>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-600">~3 Phút</span>
+            <span class="text-xs font-semibold text-slate-600">Tốc độ nhận tiền</span>
+          </div>
+          <div class="h-10 w-px bg-emerald-200"></div>
+          <div>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-slate-900">15.000+</span>
+            <span class="text-xs font-semibold text-slate-600">Giao dịch thành công</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: INTERACTIVE APP-STYLE FEE SIMULATOR (#uoctinh) -->
+  <section id="uoctinh" class="py-12 md:py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="bento-card p-6 sm:p-10 relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0068ff] text-xs font-extrabold mb-2">
+              <i class="fa-solid fa-sliders"></i> BẢNG TÍNH TIỀN THỰC NHẬN TỰ ĐỘNG
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 vn-heading-lg">
+              Ước tính chi phí & Số tiền nhận về
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 max-w-md">
+            Chọn loại ví và kéo thanh trượt số tiền cần rút. Mức phí có thể giảm thêm khi nhắn trực tiếp qua Zalo/Telegram <strong class="text-slate-900">Nguyen Tung</strong>.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left Controls (7 cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Step 1: Clickable Wallet Chips -->
+            <div>
+              <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-3">
+                1. Chọn loại Ví Trả Sau / Thẻ của bạn:
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <button type="button" data-wallet="MoMo Trả Sau" class="wallet-chip active py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  MoMo Trả Sau
+                </button>
+                <button type="button" data-wallet="ZaloPay Trả Sau" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  ZaloPay Trả Sau
+                </button>
+                <button type="button" data-wallet="SPayLater (Shopee)" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  SPayLater
+                </button>
+                <button type="button" data-wallet="Viettel Money" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  Viettel Money
+                </button>
+                <button type="button" data-wallet="TNEX Trả Sau" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  TNEX Trả Sau
+                </button>
+                <button type="button" data-wallet="Kredivo / Muadee" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  Kredivo / Muadee
+                </button>
+                <button type="button" data-wallet="Cake / FE PayLater" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  Cake / FE PayLater
+                </button>
+                <button type="button" data-wallet="Ngân hàng / Ví khác" class="wallet-chip py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 text-center">
+                  Ví / Thẻ Khác
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Amount Input + Range Slider + Presets (Fixed VNĐ Badge Overlap) -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <label for="withdrawal-amount" class="text-xs font-extrabold uppercase tracking-wider text-slate-600">
+                  2. Số tiền muốn rút (VNĐ):
+                </label>
+                <span class="text-xs font-bold text-[#0068ff]">Tối thiểu 100.000đ • Hỗ trợ tới 50.000.000đ</span>
+              </div>
+
+              <div class="relative flex items-center">
+                <input
+                  type="number"
+                  id="withdrawal-amount"
+                  min="100000"
+                  step="100000"
+                  value="5000000"
+                  class="w-full bg-white border-2 border-slate-200 focus:border-[#0068ff] rounded-2xl pl-4 pr-20 py-3.5 text-2xl font-extrabold text-slate-900 focus:outline-none transition shadow-sm"
+                />
+                <span class="pointer-events-none select-none absolute right-3.5 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-xs font-extrabold text-slate-600">
+                  VNĐ
+                </span>
+              </div>
+
+              <input
+                type="range"
+                id="withdrawal-slider"
+                min="500000"
+                max="20000000"
+                step="500000"
+                value="5000000"
+                class="fintech-slider"
+              />
+
+              <!-- Preset Chips -->
+              <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-1">
+                <button type="button" data-amount="1000000" class="quick-amount-btn py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#0068ff] transition">1 Triệu</button>
+                <button type="button" data-amount="2000000" class="quick-amount-btn py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#0068ff] transition">2 Triệu</button>
+                <button type="button" data-amount="3000000" class="quick-amount-btn py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#0068ff] transition">3 Triệu</button>
+                <button type="button" data-amount="5000000" class="quick-amount-btn py-2 rounded-xl border border-[#0068ff] text-[#0068ff] bg-blue-50 text-xs font-bold transition">5 Triệu</button>
+                <button type="button" data-amount="10000000" class="quick-amount-btn py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#0068ff] transition">10 Triệu</button>
+                <button type="button" data-amount="20000000" class="quick-amount-btn py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#0068ff] transition">20 Triệu</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Method Segmented Control -->
+            <div>
+              <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">
+                3. Hình thức nhận tiền:
+              </label>
+              <div class="grid sm:grid-cols-2 gap-2.5 p-1.5 rounded-2xl bg-slate-100 border border-slate-200">
+                <button
+                  type="button"
+                  data-method="online"
+                  data-label="Rút Online (Nhận tiền sau 3 phút)"
+                  class="method-toggle-btn py-3 px-4 rounded-xl bg-[#0068ff] text-white font-extrabold text-xs sm:text-sm shadow-md transition"
+                >
+                  ⚡ Rút Online 24/7 (Chuyển khoản 3p)
+                </button>
+                <button
+                  type="button"
+                  data-method="offline"
+                  data-label="Rút Trực Tiếp tại cơ sở (+2% phí)"
+                  class="method-toggle-btn py-3 px-4 rounded-xl text-slate-600 font-bold text-xs sm:text-sm hover:text-slate-900 transition"
+                >
+                  🤝 Gặp Trực Tiếp Tại Cơ Sở (+2% phí)
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Digital Payout Ticket (5 cols) -->
+          <div class="lg:col-span-5 payout-ticket-card p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-4 border-b border-emerald-200">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-900">PHIẾU TẠM TÍNH GIẢI NGÂN</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[11px] font-bold">Instant Payout</span>
+              </div>
+
+              <div class="space-y-3.5 my-6 text-sm">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-600 font-medium">Nền tảng ví:</span>
+                  <span id="wallet-value" class="font-extrabold text-slate-900">MoMo Trả Sau</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-600 font-medium">Phương thức:</span>
+                  <span id="method-value" class="font-bold text-slate-800 text-right">Rút Online (Nhận tiền sau 3 phút)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-600 font-medium">Số tiền rút:</span>
+                  <span id="amount-value" class="font-extrabold text-slate-900">5.000.000 đ</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-600 font-medium">Phí tham khảo (<span id="fee-rate" class="text-[#0068ff] font-extrabold">8%</span>):</span>
+                  <span id="fee-amount" class="font-bold text-rose-600">- 400.000 đ</span>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border-2 border-emerald-400 text-center mb-6 shadow-sm">
+                <span class="block text-xs font-extrabold uppercase tracking-wider text-slate-500">SỐ TIỀN BẠN THỰC NHẬN VỀ TÀI KHOẢN</span>
+                <span id="received-amount" class="block text-3xl sm:text-4xl font-extrabold text-emerald-600 mt-1">
+                  4.600.000 đ
+                </span>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <a
+                href="https://zalo.me/0985332378"
+                target="_blank"
+                rel="noopener"
+                class="w-full py-3.5 px-4 rounded-xl bg-[#0068ff] hover:bg-blue-700 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md transition"
+              >
+                <i class="fa-solid fa-comments"></i> Rút Ngay Qua Zalo: Nguyen Tung (0985.332.378)
+              </a>
+              <a
+                href="https://t.me/loveblue67"
+                target="_blank"
+                rel="noopener"
+                class="w-full py-3.5 px-4 rounded-xl bg-[#229ED9] hover:bg-sky-600 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-md transition"
+              >
+                <i class="fa-brands fa-telegram text-base"></i> Rút Ngay Qua Telegram: @loveblue67
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: UNCROPPED FULL-FRAME BILL GALLERY (#feedback) -->
+  <section id="feedback" class="py-12 md:py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-extrabold mb-2">
+            <i class="fa-solid fa-check-double"></i> 100% BILL THẬT • HIỂN THỊ FULL MÀN HÌNH KHÔNG CẮT GÓC
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 vn-heading-lg">
+            Album Giao Dịch – Feedback Thực Tế
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            Toàn bộ biên lai thanh toán & giải ngân hạn mức MoMo, ZaloPay, TNEX, SPayLater, Kredivo, FE Credit... Bấm vào từng bill để xem kích thước gốc.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-[#0068ff] text-slate-800 text-xs font-extrabold shadow-sm transition">
+            Kiểm chứng qua Zalo 0985.332.378
+          </a>
+        </div>
+      </div>
+
+      <!-- 16 Uncropped Phone-Frame Bills Grid -->
+      <div id="bill-gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 items-start">
+        <!-- Populated by app.js with full uncropped aspect ratio -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: DỊCH VỤ, CẢNH BÁO & 8 CÂU HỎI CƠ BẢN (#rutvi) -->
+  <section id="rutvi" class="py-12 md:py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto space-y-6">
+      
+      <!-- Warning & Commitment Bento Row -->
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bento-card p-6 sm:p-8 border-l-4 border-l-amber-500">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">Cảnh báo quan trọng</h3>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Hiện nay có nhiều đối tượng quảng cáo rút ví trả sau với mức phí rẻ bất thường nhằm lợi dụng lòng tin để lừa đảo, chiếm đoạt tiền hoặc tài khoản. Quý khách chỉ liên hệ duy nhất chủ dịch vụ <strong class="text-[#0068ff]">Nguyen Tung</strong> qua Zalo <strong class="text-slate-900">0985.332.378</strong> hoặc Telegram <strong class="text-slate-900">@loveblue67</strong>.
+          </p>
+        </div>
+
+        <div class="bento-card p-6 sm:p-8 border-l-4 border-l-emerald-500">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">Cam kết từ Nguyen Tung</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+              <span>Giao dịch minh bạch, báo chuẩn phí trước khi làm, chuyển khoản đủ trong 3 phút.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+              <span>Hỗ trợ song song cả <strong class="text-slate-900">Rút Online 24/7 toàn quốc</strong> và <strong class="text-slate-900">Trực tiếp tại 10 điểm Hà Nội</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+              <span>Giảm ngay 20% phí giao dịch cho khách hàng mới hoặc rút hạn mức lớn.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 8 Core Service FAQs in Modern Bento Cards -->
+      <div class="pt-6">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 vn-heading-lg">
+          8 Câu hỏi giải đáp nhanh về Dịch vụ Rút Ví Trả Sau
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">01 / KHÁI NIỆM</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Dịch vụ rút ví trả sau là gì?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Giải pháp chuyển đổi hạn mức tín dụng từ MoMo, ZaloPay, Viettel Money, TNEX, SPayLater, Kredivo, Muadee, FE PayLater… thành tiền mặt về ngân hàng.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">02 / CƠ CHẾ</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Rút hạn mức bằng cách nào?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Thanh toán hóa đơn điện, nước, internet, VETC hoặc quét mã QR thương mại hợp lệ, sau đó hoàn tiền mặt trực tiếp về tài khoản ngân hàng của bạn.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">03 / ĐỐI TƯỢNG</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Dịch vụ này dành cho ai?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Dành cho cá nhân cần xoay vốn hoặc chi tiêu tiền mặt từ hạn mức ví trả sau. Chỉ hỗ trợ ví chính chủ để đảm bảo an toàn pháp lý 100%.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">04 / THỜI GIAN</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Mất bao lâu để nhận tiền?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Chỉ từ 1 – 3 phút sau khi xác nhận giao dịch thành công, tiền mặt được chuyển khoản 24/7 về đúng ngân hàng của bạn.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">05 / BIỂU PHÍ</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Phí dịch vụ là bao nhiêu?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Thu theo tỷ lệ % cạnh tranh nhất thị trường, báo công khai trước khi thực hiện, cam kết không thu thêm bất kỳ phụ phí ẩn nào.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">06 / PHẠM VI</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Có hỗ trợ rút Online không?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Có. Hỗ trợ rút Online 24/7 trên toàn quốc qua Zalo/Telegram hoặc giao dịch trực tiếp tại 10 điểm hỗ trợ ở Hà Nội.
+            </p>
+          </div>
+
+          <div class="bento-card p-5">
+            <span class="text-xs font-extrabold text-[#0068ff]">07 / AN TOÀN</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Bảo mật thông tin thế nào?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Bảo mật tuyệt đối 100% thông tin và lịch sử giao dịch. Không bao giờ yêu cầu mật khẩu hay mã OTP đăng nhập ví của khách.
+            </p>
+          </div>
+
+          <div class="bento-card-emerald p-5">
+            <span class="text-xs font-extrabold text-emerald-700">08 / LIÊN HỆ</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1 mb-2">Liên hệ hỗ trợ bằng cách nào?</h4>
+            <p class="text-xs text-slate-700 leading-relaxed">
+              Nhắn trực tiếp Zalo <strong>0985.332.378</strong> hoặc Telegram <strong>@loveblue67</strong> (Chủ dịch vụ: <strong>Nguyen Tung</strong>) để được xử lý ngay lập tức!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: 10 ĐỊA CHỈ CHI NHÁNH & BẢN ĐỒ (#support-centers) -->
+  <section id="support-centers" class="py-12 md:py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto bento-card p-6 sm:p-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#0068ff]">HỆ THỐNG ĐIỂM GIAO DỊCH</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 vn-heading-lg">
+            Danh sách 10 Chi nhánh Hỗ trợ Trực tiếp (<span id="locationCount">10</span>)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Hotline điều phối chung toàn hệ thống: <strong class="text-[#0068ff]">0985.332.378 (Nguyen Tung)</strong>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <select id="provinceFilter" class="px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800">
+            <option value="">Tất cả Tỉnh/Thành</option>
+            <option value="Hà Nội">Hà Nội</option>
+          </select>
+          <select id="districtFilter" class="px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-800">
+            <option value="">Tất cả Quận/Huyện</option>
+          </select>
+          <button id="findNearestBtn" type="button" class="px-4 py-2.5 rounded-xl bg-[#0068ff] hover:bg-blue-700 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-sm transition">
+            <i class="fa-solid fa-location-crosshairs"></i> Cơ sở gần nhất
+          </button>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 space-y-3 max-h-[480px] overflow-y-auto custom-scroll pr-1" id="locationsList">
+          <!-- Populated by app.js -->
+        </div>
+        <div class="lg:col-span-7">
+          <div id="map" class="w-full h-[380px] lg:h-[480px] rounded-2xl border border-slate-200 overflow-hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: BÌNH LUẬN GẦN ĐÂY & CÂU HỎI CHÍNH SÁCH (#comments & #faq) -->
+  <section id="comments" class="py-12 md:py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left: Realtime Comments Feed (6 cols) -->
+      <div class="lg:col-span-6 bento-card p-6 sm:p-8">
+        <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-200">
+          <div>
+            <h3 class="text-xl font-extrabold text-slate-900">Bình luận khách hàng</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Phản hồi trực tiếp sau khi giao dịch với Nguyen Tung</p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-extrabold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span><strong id="online-users-count">29</strong> đang online</span>
+          </div>
+        </div>
+
+        <form id="user-comment-form" class="mb-5 space-y-2.5 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+          <div class="grid sm:grid-cols-3 gap-2.5">
+            <input
+              type="text"
+              id="comment-author"
+              placeholder="Tên của bạn *"
+              required
+              class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#0068ff]"
+            />
+            <input
+              type="text"
+              id="comment-content"
+              placeholder="Nhập bình luận đánh giá dịch vụ..."
+              required
+              class="sm:col-span-2 px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#0068ff]"
+            />
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-4 py-2 rounded-xl bg-[#0068ff] hover:bg-blue-700 text-white font-extrabold text-xs transition">
+              Gửi bình luận
+            </button>
+          </div>
+        </form>
+
+        <div id="realtime-comments-list" class="space-y-3 max-h-[430px] overflow-y-auto custom-scroll pr-1">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <!-- Right: Policy Accordions (#faq) (6 cols) -->
+      <div id="faq" class="lg:col-span-6 bento-card p-6 sm:p-8">
+        <div class="pb-4 mb-5 border-b border-slate-200">
+          <span class="text-xs font-extrabold text-[#0068ff] uppercase">CHÍNH SÁCH & QUY ĐỊNH</span>
+          <h3 class="text-xl font-extrabold text-slate-900 mt-0.5">Câu hỏi phổ biến về Ví Trả Sau</h3>
+        </div>
+
+        <div class="space-y-3">
+          <div class="accordion-item active rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden">
+            <button type="button" class="accordion-header w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-sm text-slate-900">
+              <span>1. Ví Trả Sau là gì & Hạn mức cấp bao nhiêu?</span>
+              <i class="fa-solid fa-chevron-down accordion-icon text-slate-400 transition-transform"></i>
+            </button>
+            <div class="accordion-content px-4">
+              <p class="pb-4 pt-2 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+                Ví Trả Sau là hạn mức chi tiêu trước – trả tiền sau do các ngân hàng (TPBank, HDBank, VPBank, FE Credit...) cấp trên ứng dụng MoMo, ZaloPay, Shopee, Kredivo với hạn mức từ 1 triệu đến 20 triệu đồng, miễn lãi lên đến 45 ngày.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden">
+            <button type="button" class="accordion-header w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-sm text-slate-900">
+              <span>2. Quy định về Phí chậm trả khi quá hạn sao kê</span>
+              <i class="fa-solid fa-chevron-down accordion-icon text-slate-400 transition-transform"></i>
+            </button>
+            <div class="accordion-content px-4">
+              <div class="pb-4 pt-2 border-t border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+                <p>Nếu thanh toán trễ hạn sao kê, phí phạt chậm trả được tính theo số ngày quá hạn:</p>
+                <p>• Quá hạn 1–4 ngày: 5% dư nợ quá hạn (tối thiểu 50.000đ)</p>
+                <p>• Quá hạn 5–9 ngày: 10% dư nợ quá hạn (tối thiểu 100.000đ)</p>
+                <p>• Quá hạn 10–14 ngày: 15% dư nợ quá hạn (tối thiểu 150.000đ)</p>
+                <p>• Trên 15 ngày: 20% dư nợ quá hạn (tối thiểu 200.000đ)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden">
+            <button type="button" class="accordion-header w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-sm text-slate-900">
+              <span>3. Phí dịch vụ duy trì hàng tháng</span>
+              <i class="fa-solid fa-chevron-down accordion-icon text-slate-400 transition-transform"></i>
+            </button>
+            <div class="accordion-content px-4">
+              <p class="pb-4 pt-2 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+                Miễn phí 5 giao dịch đầu tiên sau khi mở ví. Từ giao dịch thứ 6 trở đi, phí duy trì là 30.000đ/tháng (nếu tháng đó không phát sinh giao dịch thì không mất phí).
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden">
+            <button type="button" class="accordion-header w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-sm text-slate-900">
+              <span>4. Điều khoản Chuyển đổi Trả Góp & Thanh toán tối thiểu</span>
+              <i class="fa-solid fa-chevron-down accordion-icon text-slate-400 transition-transform"></i>
+            </button>
+            <div class="accordion-content px-4">
+              <p class="pb-4 pt-2 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+                Khách hàng có thể chia nhỏ dư nợ trả góp 3, 6, 9, 12 tháng (dư nợ tối thiểu 300.000đ) hoặc chọn Thanh toán tối thiểu 15% dư nợ gốc trước ngày đến hạn để chuyển phần dư nợ còn lại sang tháng kế tiếp mà không bị tính phí phạt quá hạn.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden">
+            <button type="button" class="accordion-header w-full p-4 text-left flex items-center justify-between gap-3 font-bold text-sm text-slate-900">
+              <span>5. Chính sách Tăng hạn mức, Giảm hạn mức và Khóa ví</span>
+              <i class="fa-solid fa-chevron-down accordion-icon text-slate-400 transition-transform"></i>
+            </button>
+            <div class="accordion-content px-4">
+              <p class="pb-4 pt-2 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+                Chi tiêu thường xuyên và thanh toán đúng hạn sẽ được ngân hàng tự động xét duyệt tăng hạn mức hàng tháng. Ngược lại, để quá hạn nhiều kỳ liên tiếp sẽ dẫn tới giảm hạn mức hoặc khóa ví tạm thời.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (BRIGHT CLEAN SURFACE) -->
+  <footer class="border-t border-slate-200 bg-white py-12 px-4 sm:px-6 mt-8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 pb-8 border-b border-slate-200">
+      <div class="md:col-span-6 space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#0068ff] to-emerald-500 text-white font-extrabold text-sm flex items-center justify-center">
+            NT
+          </div>
+          <span class="font-extrabold text-slate-900 text-lg">NGUYEN TUNG • RÚT VÍ TRẢ SAU 24/7</span>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed max-w-xl">
+          Giải pháp hỗ trợ rút tiền mặt từ hạn mức Ví Trả Sau MoMo, ZaloPay, Viettel Money, TNEX, SPayLater, Kredivo, Muadee, Cake, FE PayLater nhanh chóng – minh bạch – bảo mật tuyệt đối.
+        </p>
+      </div>
+
+      <div class="md:col-span-6 flex flex-col sm:flex-row sm:items-center justify-end gap-3.5">
+        <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="px-5 py-3.5 rounded-2xl bg-[#0068ff] hover:bg-blue-700 text-white font-extrabold text-xs sm:text-sm flex items-center gap-2.5 shadow-md">
+          <i class="fa-solid fa-comment-dots text-base"></i> Zalo: Nguyen Tung (0985.332.378)
+        </a>
+        <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="px-5 py-3.5 rounded-2xl bg-[#229ED9] hover:bg-sky-600 text-white font-extrabold text-xs sm:text-sm flex items-center gap-2.5 shadow-md">
+          <i class="fa-brands fa-telegram text-base"></i> Telegram: @loveblue67
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+      <p>© 2026 <strong>Nguyen Tung (0985.332.378 | Tele @loveblue67)</strong>. All rights reserved.</p>
+      <p>Hỗ trợ Online 24/7 Toàn Quốc & 10 Cơ sở Hà Nội.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CONTACT PILLS (BOTTOM RIGHT - ELEVATED Z-INDEX) -->
+  <div class="fixed right-4 bottom-20 md:bottom-6 z-[1100] flex flex-col items-end gap-3">
+    <a
+      href="https://t.me/loveblue67"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center gap-2.5 bg-[#229ED9] hover:bg-sky-600 text-white pl-3 pr-4 py-2.5 rounded-full shadow-xl border border-white/40 transition transform hover:scale-105 pulse-btn"
+    >
+      <div class="w-8 h-8 rounded-full bg-white text-[#229ED9] flex items-center justify-center text-base">
+        <i class="fa-brands fa-telegram"></i>
+      </div>
+      <div class="text-left leading-tight">
+        <span class="block text-[10px] font-semibold text-sky-100">Telegram 24/7</span>
+        <span class="block text-xs font-extrabold">Nguyen Tung (@loveblue67)</span>
+      </div>
+    </a>
+
+    <a
+      href="https://zalo.me/0985332378"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center gap-2.5 bg-[#0068ff] hover:bg-blue-700 text-white pl-3 pr-4 py-2.5 rounded-full shadow-xl border border-white/40 transition transform hover:scale-105 pulse-btn"
+    >
+      <div class="w-8 h-8 rounded-full bg-white text-[#0068ff] flex items-center justify-center text-xs font-extrabold">
+        Zalo
+      </div>
+      <div class="text-left leading-tight">
+        <span class="block text-[10px] font-semibold text-blue-100">Zalo Hỗ Trợ Ngay</span>
+        <span class="block text-xs font-extrabold">Nguyen Tung • 0985.332.378</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- MOBILE BOTTOM DOCK -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-[1100] bg-white/95 backdrop-blur-xl border-t border-slate-200 px-3 py-2 grid grid-cols-3 gap-2 shadow-2xl">
+    <a href="https://zalo.me/0985332378" target="_blank" rel="noopener" class="py-2 rounded-xl bg-[#0068ff] text-white font-extrabold text-xs text-center flex items-center justify-center gap-1.5">
+      <i class="fa-solid fa-comment-dots"></i> Zalo A.Tùng
+    </a>
+    <a href="https://t.me/loveblue67" target="_blank" rel="noopener" class="py-2 rounded-xl bg-[#229ED9] text-white font-extrabold text-xs text-center flex items-center justify-center gap-1.5">
+      <i class="fa-brands fa-telegram"></i> @loveblue67
+    </a>
+    <a href="tel:0985332378" class="py-2 rounded-xl bg-emerald-600 text-white font-extrabold text-xs text-center flex items-center justify-center gap-1.5">
+      <i class="fa-solid fa-phone"></i> Gọi Ngay
+    </a>
+  </div>
+
+  <!-- LIGHTBOX MODAL FOR FULL UNCROPPED BILLS -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-[1200] bg-slate-900/90 backdrop-blur-md flex items-center justify-center p-4">
+    <button type="button" onclick="closeLightbox()" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-xl flex items-center justify-center">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button type="button" onclick="stepLightbox(-1)" class="absolute left-3 sm:left-6 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-lg flex items-center justify-center">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="max-w-sm w-full text-center">
+      <img id="lightbox-img" src="" alt="Bill giao dịch" class="max-h-[82vh] mx-auto rounded-2xl shadow-2xl border border-white/20 object-contain bg-white" />
+      <div class="mt-3 flex items-center justify-between text-xs text-slate-200 px-2">
+        <span id="lightbox-caption" class="font-bold text-white"></span>
+        <span id="lightbox-counter" class="px-2.5 py-0.5 rounded-full bg-[#0068ff] text-white font-extrabold"></span>
+      </div>
+    </div>
+    <button type="button" onclick="stepLightbox(1)" class="absolute right-3 sm:right-6 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white text-lg flex items-center justify-center">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-notification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[1200] px-5 py-3 rounded-full bg-slate-900 text-white text-xs sm:text-sm font-extrabold shadow-2xl flex items-center gap-2 transition-all duration-300 translate-y-20 opacity-0 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toast-message">Đã sao chép!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

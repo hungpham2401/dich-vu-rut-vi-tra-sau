@@ -1,0 +1,271 @@
+/* Neo-Fintech 2026 Bright Light Theme — 100% Native Vietnamese Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&subset=vietnamese');
+
+:root {
+  --bg-page: #f4f7fb;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --primary: #0068ff;
+  --emerald: #059669;
+  --emerald-bright: #10b981;
+  --telegram: #229ed9;
+  --border-light: #e2e8f0;
+}
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Preserve FontAwesome icons */
+.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+body {
+  background-color: var(--bg-page);
+  background-image: 
+    radial-gradient(circle at 10% 5%, rgba(0, 104, 255, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 90% 12%, rgba(16, 185, 129, 0.09) 0%, transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Remove ugly browser number input arrows that overlap the VNĐ badge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* Vietnamese Display Heading Fix: Generous line-height & clean kerning so diacritics never collide */
+.vn-heading-xl {
+  line-height: 1.38 !important;
+  letter-spacing: normal !important;
+  word-spacing: 0.02em;
+}
+
+.vn-heading-lg {
+  line-height: 1.35 !important;
+  letter-spacing: normal !important;
+}
+
+/* Isolate Leaflet map z-index so it never overlaps navbar or floating buttons */
+#map {
+  isolation: isolate;
+  position: relative;
+  z-index: 10 !important;
+}
+
+/* Subtle Bright Grid Backdrop */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+/* Bright Bento Card Surface */
+.bento-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.75rem;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 18px 40px -12px rgba(15, 23, 42, 0.1);
+}
+
+.bento-card-emerald {
+  background: linear-gradient(145deg, #ecfdf5 0%, #ffffff 80%);
+  border: 1px solid #a7f3d0;
+  border-radius: 1.75rem;
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.12);
+}
+
+/* Bright VIP Pass Card for Nguyen Tung */
+.vip-pass-card {
+  background: linear-gradient(135deg, #0052d4 0%, #1d4ed8 52%, #0d9488 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.75rem;
+  box-shadow: 0 20px 45px -12px rgba(0, 104, 255, 0.28);
+}
+
+/* Payout Ticket Card (Bright Mint/Emerald Look) */
+.payout-ticket-card {
+  background: linear-gradient(160deg, #f0fdf4 0%, #eff6ff 100%);
+  border: 2px solid #6ee7b7;
+  border-radius: 1.75rem;
+  box-shadow: 0 16px 36px -10px rgba(16, 185, 129, 0.14);
+}
+
+/* Infinite Marquee Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Uncropped Phone Frame for Bill Gallery (Bright Mode) */
+.bill-phone-frame {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  padding: 0.65rem;
+  box-shadow: 0 8px 24px -8px rgba(15, 23, 42, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-phone-frame:hover {
+  transform: translateY(-6px);
+  border-color: #0068ff;
+  box-shadow: 0 20px 38px -12px rgba(0, 104, 255, 0.18);
+}
+
+.bill-img-wrapper {
+  width: 100%;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 100% Uncropped Full Image Display */
+.bill-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.bill-phone-frame:hover .bill-img-wrapper img {
+  transform: scale(1.02);
+}
+
+/* Wallet Selector Chip */
+.wallet-chip {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+.wallet-chip.active {
+  background: #0068ff !important;
+  color: #ffffff !important;
+  border-color: #0068ff !important;
+  font-weight: 800;
+  box-shadow: 0 8px 20px -4px rgba(0, 104, 255, 0.32);
+}
+
+/* Range Slider Styling */
+input[type="range"].fintech-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #cbd5e1;
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"].fintech-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0068ff;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 104, 255, 0.45);
+}
+
+/* Pulse Ring for Floating Contact */
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  70% { transform: scale(1.38); opacity: 0; }
+  100% { transform: scale(1.38); opacity: 0; }
+}
+.pulse-btn {
+  position: relative;
+}
+.pulse-btn::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: inherit;
+  z-index: -1;
+  animation: pulse-ring 2s infinite;
+}
+
+/* Realtime Comment Slide */
+@keyframes slideInComment {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.comment-item-new {
+  animation: slideInComment 0.4s ease forwards;
+}
+
+/* Custom Light Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.accordion-item.active .accordion-content {
+  max-height: 1500px;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  color: #0068ff;
+}

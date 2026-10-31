@@ -120,11 +120,11 @@ function initCalculator() {
   let selectedMethodLabel = "Rút Online (Nhận tiền sau 3 phút)";
 
   function calculateFeeRate(amount) {
-    if (amount <= 1000000) return 8;
-    if (amount <= 3000000) return 8;
-    if (amount <= 5000000) return 8;
-    if (amount <= 10000000) return 8;
-    return 8;
+    if (amount <= 1000000) return 18;
+    if (amount <= 3000000) return 18;
+    if (amount <= 5000000) return 18;
+    if (amount <= 10000000) return 18;
+    return 18;
   }
 
   function runCalculation() {
